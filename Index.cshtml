@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<CRUD7.Models.Employee>
+<h1>Employees Table</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th>@item.empId</th>
+                <th>@item.name</th>
+                <th>@item.email</th>
+                <th>@item.contactNo</th>
+                <th>@item.address</th>
+                <th><a class="btn btn-primary" asp-controller="Employee" asp-action="Edit" asp-route-id="@item.empId">Edit</a></th>
+                <th><a class="btn btn-primary" asp-action="Delete" asp-controller="Employee" asp-route-id="@item.empId">Delete</a></th>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+
+
+
